@@ -22,7 +22,7 @@ Directories `binance/`, `coinbase/`, `kraken/` corespond to exchanges. Subdirect
                 |20221104/
                 |...
                 |20221130/
-            |coinbase2_5-12_22
+            |coinbase2_5-12_22/
         |kraken/
             |kraken_5-11_22/
         |...
