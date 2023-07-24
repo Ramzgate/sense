@@ -7,11 +7,11 @@ Directories `binance/`, `coinbase/`, `kraken/` corespond to exchanges. Subdirect
 ```markdown
 ----trades/
         |binanace/
-            |binance_11_22
-            |binance_10_22
+            |binance_11_22/
+            |binance_10_22/
             |...
         |coinbase/
-            |coinbase1_11_22
+            |coinbase1_11_22/
                 |20221101/
                     |COINBASE_SPOT_BTC_USD.csv.gz
                     |COINBASE_SPOT_AAVE_BTC.csv.gz
@@ -24,7 +24,7 @@ Directories `binance/`, `coinbase/`, `kraken/` corespond to exchanges. Subdirect
                 |20221130/
             |coinbase2_5-12_22
         |kraken/
-            |kraken_5-11_22
+            |kraken_5-11_22/
         |...
 ```
 
