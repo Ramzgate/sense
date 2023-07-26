@@ -1,8 +1,8 @@
 ### Historical Data File Organization
 
-The _CryptoTick_ data should be setup in a subdirctory `trades/` in the structure below.
+The historical data should be setup in a subdirctory `trades/` in the structure below.
 - Within `trades/` there are seperate subdirectories for each exchange `binance/`, `coinbase/`,`kraken/`, etc.
-- Each exchange directory will contain further subdirectories by installments of compressed file deliveries from _CryptoTick_, `binance_11_22/`, `binance_10_22/`, etc.
+- Each exchange directory will contain further subdirectories by installments of compressed file deliveries from the provider, `binance_11_22/`, `binance_10_22/`, etc.
 - It is important to note that if there is overlap between installments, redundant files will be ignored.
 
 With this structure historical data will be read to memory for further processing. 
