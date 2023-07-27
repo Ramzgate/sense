@@ -4,7 +4,7 @@ The landscape of digital assets and blockchain technology has rapidly evolved, i
 
 These new assets pose challenges for financial reporting, both conceptual and methodological. One such challenge is _fair value_ pricing, the standard required by US and inrenational accounting standards (US GAAP and IFRS) for reporting value in financial reports.
 
-Fair value pricing is part of the mark to market accounting method, wherby the value of assets must reflect their current market prices, and valuations must be adjusted regularly to account for market conditions. By this standard, the value of an asset is determind by the price of the asset on a designtated  __principal market__, in most cases this would be the exchange where the asset is registerd for trading (NYSE, Nasdaq, CBOT etc.), in other cases the designation can be done based on dominant volumes. 
+Fair value pricing is part of the mark to market accounting method, wherby the value of assets must reflect their current market prices, and valuations must be adjusted regularly to account for market conditions. By this standard, the value of an asset is determind by the price of the asset on a designtated  **_principal market_**, in most cases this would be the exchange where the asset is registerd for trading (NYSE, Nasdaq, CBOT etc.), in other cases the designation can be done based on dominant volumes. 
 
 
 
