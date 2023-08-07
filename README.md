@@ -14,5 +14,19 @@ In the universe of digital assets, trading is global and happens across many dif
 
 The __Principal Path Method__ is to dynamically identify a principal market and once that market is obtained, source all price information from that market. The identification is a continuous process driven by volumes, market dynamics and freshness of data.
 
+```mermaid
+graph LR
+  A[FTT/Wallet] --> B[FTT/BNB]
+  B --> C[USDT/BNB]
+  C -->|BNB/CB| D[USDT/CB]
+  D -->|ramp| E[USD]
+  A --> F[FTT/FTX]
+  F --> G[ETH/FTX]
+  G --> |FTX/CB| H[ETH/CB]
+  H -->|ramp| E
+  F --> I[USDT/FTX]
+  I -->|ramp| E
+```
+
 ## The Principal Path Library
 This
