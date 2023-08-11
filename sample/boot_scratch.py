@@ -26,6 +26,10 @@ print('Bootstrap step 2',timer()-start)
 # step 3: update succinct price table
 pjson=ppm.loadJsonUtility('price.json',ppm.path_ob.cache)
 print('Bootstrap step 3.1',timer()-start)
-ptbl=ppm.priceTable2Pandas(pjson)
+#ptbl=ppm.priceTable2Pandas(pjson)
+ptbl=ppm.priceTable2Pandas({})
 print('Bootstrap step 3.2',timer()-start)
-print(ptbl)
+print(len(ptbl))
+ptbl=ppm.updatePriceTable(ptbl,vtbl.keys(),vtbl)
+print(len(ptbl))
+
