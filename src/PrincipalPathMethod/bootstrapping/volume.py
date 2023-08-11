@@ -160,7 +160,7 @@ def genTimeFrame(date,freq=10):
 
 def getIntervalPrice(ddate,cc,dts):
     # Get asset latest price for fixed intervals, default 10sec
-    print('--->',ddate,type(ddate))
+    #print('--->',ddate,type(ddate))
     (ex0,ex1,ex2,ccy1,ccy2)=cc
     df=dailyTransactions(strDate(ddate),ex0,ex1,ex2,ccy1,ccy2)
     pusd=pd.merge_asof(
@@ -179,7 +179,7 @@ def updatePriceTable(ptbl,dates,vtbl):
         for ccy in vtbl[dd]:
             if ccy not in ptbl[dd]:
                 print('Update!!')
-                ptbl[dd][ccy]=getIntervalPrice(dd,vtbl[dd][ccy],dts)
+                ptbl[dd][ccy]=getIntervalPrice(str2datetime(dd),vtbl[dd][ccy],dts)
     return(ptbl)
 
 def priceTable2Json(ptbl):
