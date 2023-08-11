@@ -10,5 +10,11 @@ sys.path.append('/Users/eyal42/Work/Full Time/Libra/Libra Research/Post Lukka Re
 import PrincipalPathMethod as ppm
 
 
-vol=ppm.getMonthlyVol()
-print(vol)
+start=timer()
+
+print('Bootstrap step 3.1',timer()-start)
+pjson=ppm.loadJsonUtility('price.json',ppm.path_ob.cache)
+print('Bootstrap step 3.1',timer()-start)
+ptbl=ppm.priceTable2Pandas(pjson)
+print('Bootstrap step 3.2',timer()-start)
+print(ptbl)
