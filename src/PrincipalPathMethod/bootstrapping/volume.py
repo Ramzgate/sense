@@ -178,7 +178,7 @@ def updatePriceTable(ptbl,dates,vtbl):
         dts=genTimeFrame(dd,freq=10)
         for ccy in vtbl[dd]:
             if ccy not in ptbl[dd]:
-                print('Update!!')
+                print('Update!!',dd)
                 ptbl[dd][ccy]=getIntervalPrice(str2datetime(dd),vtbl[dd][ccy],dts)
     return(ptbl)
 
