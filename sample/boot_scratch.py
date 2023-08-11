@@ -12,7 +12,18 @@ import PrincipalPathMethod as ppm
 
 start=timer()
 
-print('Bootstrap step 3.1',timer()-start)
+print('Bootstrap step 0')
+start=timer()
+
+# setp 1: Update volume table for bearing assets priced by USD or USDC
+ppm.usdPairsUpdate()
+print('Bootstrap step 1',timer()-start)
+
+# step 2: find for each bearing asset dominant exchange by USD volume 
+vtbl=ppm.findDominantExchanges()
+print('Bootstrap step 2',timer()-start)
+
+# step 3: update succinct price table
 pjson=ppm.loadJsonUtility('price.json',ppm.path_ob.cache)
 print('Bootstrap step 3.1',timer()-start)
 ptbl=ppm.priceTable2Pandas(pjson)
