@@ -13,26 +13,41 @@ from ..ppmGlobal import *
 
 ## Step 1: Compute volume for bearing assets, assets used to price other assets (BTC, ETH, USDC, etc.)
 def getPairsExchanges():
-    # scan through directory tree spannoing from  '.../trades/' and identify all pairs supported by data files
-    # on this directory subtree 
+    # scan through directory tree spanning from  '.../trades/' and identify all pairs supported by data files
+    # on this directory subtree
+    # Returns 
+    # 1 . pairs - dictionary type with keys as strings of date '20221006', '20221013',..., for each date a array with all 
+    #      extended pairs traded on the day - [('coinbase','coinbase2','COINBASE','SHIB','USD'),...] 
+    # 2. asset_pairs - a set([]) with all pairs traded at some point during period - {('FTT','ETH'),('ETH','USD'),('BUSD','USDT'),...}
     pairs={}
     asset_pairs=set([])
     with os.scandir(path_ob.data) as l0:
-        for ex0 in l0:
+        tmp_l0=list(l0)
+        #print('l0 -->',tmp_l0)
+        for ex0 in tmp_l0:
+            #print('exo.path',ex0.path)
             if ex0.is_dir():
                 with os.scandir(ex0.path) as l1:
-                    for ex1 in l1:
+                    tmp_l1=list(l1)
+                    #print('l1-->',tmp_l1)
+                    for ex1 in tmp_l1:
                         if ex1.is_dir():
                             with os.scandir(ex1.path) as l2:
-                                for dt in l2:
+                                tmp_l2=list(l2)
+                                #print('l2-->',tmp_l2)
+                                for dt in tmp_l2:
                                     if dt.is_dir():
                                         if not dt.name in pairs:
                                             pairs[dt.name]=[]
                                         with os.scandir(dt.path) as l3:
-                                            for pp in l3:
-                                                ex,spt,ccy1,ccy2=pp.name.split('.')[0].split('_')
-                                                pairs[dt.name].append((ex0.name,ex1.name,ex,ccy1,ccy2))
-                                                asset_pairs.add((ccy1,ccy2))
+                                            tmp_l3=list(l3)
+                                            #print('l3-->',tmp_l3)
+                                            for pp in tmp_l3:
+                                                #print(pp.name,pp.is_file())
+                                                if pp.name[:2]!='._':
+                                                    ex,spt,ccy1,ccy2=pp.name.split('.')[0].split('_')
+                                                    pairs[dt.name].append((ex0.name,ex1.name,ex,ccy1,ccy2))
+                                                    asset_pairs.add((ccy1,ccy2))
     pairs={
             date:[(ex0,ex1,ex3,ccy1,ccy2) for (ex0,ex1,ex3,ccy1,ccy2) in pairs[date] if not ccy2 in ['EUR','GBP'] ]
             for date in pairs.keys()
@@ -77,8 +92,11 @@ def myfilter(vol,pairs):
 
 def getPairs():
     # pairs - all pairs in data
-    # bearing assets - assets that appear as ccy2
-    # usd_pairs - bearing assets traded against USD or USDC
+    #        - dictionary type with keys as strings of date '20221006', '20221013',..., for each date a array with all 
+    #          extended pairs traded on the day - [('coinbase','coinbase2','COINBASE','SHIB','USD'),...] 
+    # usd_pairs - assets traded directly against USD or USDC, dict type with string as date keys, each date is a list of extended pairs as # above
+    # asset_pairs - a set([]) with all pairs traded at some point during period - {('FTT','ETH'),('ETH','USD'),('BUSD','USDT'),...}
+    # bearing assets - assets that appear as ccy2, list - ['BNB', 'BTC', 'BUSD', 'ETH', 'USDC', 'USDT'] 
     pairs,asset_pairs=getPairsExchanges()
     bearing_assets=sorted(set([ccy2 for (ccy1,ccy2) in asset_pairs])-set(['USD','EUR', 'GBP']))
     usd_pairs={
@@ -142,6 +160,7 @@ def genTimeFrame(date,freq=10):
 
 def getIntervalPrice(ddate,cc,dts):
     # Get asset latest price for fixed intervals, default 10sec
+    print('--->',ddate,type(ddate))
     (ex0,ex1,ex2,ccy1,ccy2)=cc
     df=dailyTransactions(strDate(ddate),ex0,ex1,ex2,ccy1,ccy2)
     pusd=pd.merge_asof(
@@ -196,7 +215,7 @@ def bootstrapVolume():
     vtbl=findDominantExchanges()
     print('Bootstrap step 2',timer()-start)
 
-    # step 3: update succint price table
+    # step 3: update succinct price table
     pjson=loadJsonUtility('price.json',path_ob.cache)
     print('Bootstrap step 3.1',timer()-start)
     ptbl=priceTable2Pandas(pjson)
@@ -206,7 +225,7 @@ def bootstrapVolume():
     saveJsonUtility(priceTable2Json(ptbl),'price.json',path_ob.cache)
     print('Bootstrap step 3.4',timer()-start)
 
-    # step 4: load volume table and succint price table
+    # step 4: load volume table and succinct price table
     pairs,usd_pairs,asset_pairs,bearing_assets=getPairs()
     pjson=loadJsonUtility('price.json',path_ob.cache)
     ########################################################################

@@ -71,11 +71,13 @@ def dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2):
 ########################  Monthly Volume Utilities  ####################
 ########################################################################
 ## Reads monthly volume data from cached file 'vol.json'
+#
+#  monthlyVolume - {('USDT','USD','FTX'):2852416873.226717,('USDT','USD','BTS'):127322350.14148754,...
 
 def getMonthlyVol():
     global path_ob
     eMap={'BINANCE':'BNB','BITSTAMP':"BTS",'COINBASE':'CB','FTX':'FTX','FTXUS':'FTXUS','KRAKEN':'KRA'}
-    print(path_ob.data,path_ob.cache)
+    #print(path_ob.data,path_ob.cache)
     vol=loadJsonUtility('vol.json',path_ob.cache)
     mmV={tt:sum([vol[dd][tt] for dd in vol if tt in vol[dd]])\
                 for tt in set().union(*[set(vol[dd].keys()) for dd in vol])}
