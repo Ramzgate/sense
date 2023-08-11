@@ -74,17 +74,32 @@ def dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2):
 #
 #  monthlyVolume - {('USDT','USD','FTX'):2852416873.226717,('USDT','USD','BTS'):127322350.14148754,...
 
+def getAllDaysInMonth(month,year):
+    date=datetime.date(year,month,1)
+    delta=datetime.timedelta(1)
+    day_lst=[]
+    while date.month==month:
+        day_lst.append(date)
+        date=date+delta
+    day_lst=set([''.join(date.__str__().split('-')) for date in sorted(day_lst)])
+    return(day_lst)
+
 def getMonthlyVol():
     global path_ob
     eMap={'BINANCE':'BNB','BITSTAMP':"BTS",'COINBASE':'CB','FTX':'FTX','FTXUS':'FTXUS','KRAKEN':'KRA'}
-    #print(path_ob.data,path_ob.cache)
+    month=11 ; year=2022 # this is the only month the existing DB has reliable data, for a larger DB it would make sense to average across avaialble months
+    days_in_month=getAllDaysInMonth(month,year)
     vol=loadJsonUtility('vol.json',path_ob.cache)
-    mmV={tt:sum([vol[dd][tt] for dd in vol if tt in vol[dd]])\
-                for tt in set().union(*[set(vol[dd].keys()) for dd in vol])}
-    monthlyVolume={(ccy1,ccy2,eMap[ex]):mmV['_'.join([ex,ccy1,ccy2])]\
-                   for (ex,ccy1,ccy2) in [tuple(ww.split('_')) for ww in mmV.keys()]}
+    exchange_pairs=set().union(*[set(vol[dd].keys()) for dd in vol])  # {'BINANCE_AAVE_BNB','BINANCE_AAVE_BTC',...
+    mmV={}
+    for ex_pair in exchange_pairs:
+        days_traded_in_month=set([date for date in vol if ex_pair in vol[date]])&days_in_month
+        monthly_vol=sum([vol[date][ex_pair] for date in days_traded_in_month])
+        avg_daily_vol=monthly_vol/len(days_traded_in_month)
+        mmV[ex_pair]=avg_daily_vol*len(days_in_month)
+        #mmV={ex_pair:sum([vol[date][ex_pair] for date in vol if ex_pair in vol[date]])  for ex_pair in exchange_pairs}
+    monthlyVolume={(ccy1,ccy2,eMap[ex]):mmV['_'.join([ex,ccy1,ccy2])] for (ex,ccy1,ccy2) in [tuple(ww.split('_')) for ww in mmV.keys()]}
     return(monthlyVolume)
-
 
 #############################################################
 ######################## Data Utilities  ####################
