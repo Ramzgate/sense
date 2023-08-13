@@ -70,7 +70,7 @@ def updateVolumeJson(vol,new_pairs,bearing_assets,ptbl={}):
                     update_flag=True
                 elif len(ptbl)>0 and ccy2 in bearing_assets and\
                     ((ccy1!='AAVE' and ccy1!='FTT' and ccy1!='FIL' and ccy1!='APE' and ccy1!='MANA') or ccy2!='BNB'):
-                    pusd=ptbl[date][ccy2]                
+                    pusd=ptbl[date][ccy2]
                     mrg=pd.merge_asof(
                         pp.sort_index(),
                         pusd.sort_index(),

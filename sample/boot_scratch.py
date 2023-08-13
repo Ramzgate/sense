@@ -38,15 +38,6 @@ start=timer()
 # ppm.saveJsonUtility(ppm.priceTable2Json(ptbl),'price.json',ppm.path_ob.cache)
 # print('Bootstrap step 3.4',timer()-start)
 
-# # step 4: load volume table and succinct price table
-# pairs,usd_pairs,asset_pairs,bearing_assets=ppm.getPairs()
-# pjson=ppm.loadJsonUtility('price.json',ppm.path_ob.cache)
-# ########################################################################
-# ### There should be a pandas library for this that is much faster  ####
-# ptbl=ppm.priceTable2Pandas(pjson)
-# ########################################################################
-# vol=ppm.loadJsonUtility('vol.json',ppm.path_ob.cache)
-# print('Bootstrap step 4',timer()-start)
 
 #print(pairs['20221108'])
 
@@ -57,17 +48,22 @@ def updateVolumeJson(vol,new_pairs,bearing_assets,ptbl={}):
     for date in new_pairs:
         if not date in vol.keys():
             vol[date]={}
-        for (ex0,ex1,ex2,ccy1,ccy2) in new_pairs[date]:
+        print('1-->',new_pairs[date])
+        for ex0,ex1,ex2,ccy1,ccy2 in new_pairs[date]:
             kk='_'.join([ex2,ccy1,ccy2])
-            print(date,kk)
+            print('2-->',date,kk)
+            print(ccy2,bearing_assets)
+            print(kk in vol[date])
             if not kk in vol[date]:
-                pp=ppm.dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2)
+                pp=dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2)
+                print('`3-->',pp.head(10))
                 if ccy2 in ['USD','USDC']:
                     vol[date][kk]=(pp['price']*pp['base_amount']).sum()
                     update_flag=True
                 elif len(ptbl)>0 and ccy2 in bearing_assets and\
                     ((ccy1!='AAVE' and ccy1!='FTT' and ccy1!='FIL' and ccy1!='APE' and ccy1!='MANA') or ccy2!='BNB'):
                     pusd=ptbl[date][ccy2]                
+                    print('4--->',pusd)
                     mrg=pd.merge_asof(
                         pp.sort_index(),
                         pusd.sort_index(),
@@ -101,20 +97,36 @@ def dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2):
     full_path=ppm.path_ob.data+ex0+'/'+ex1+'/'+date+'/'+ex2+'_SPOT_'+ccy1+'_'+ccy2+'.csv.gz'
     print(full_path)
     print('1')
-    #df=pd.read_csv(full_path,delimiter=';',compression='infer',
-    #           parse_dates=['time_exchange','time_coinapi'],index_col='time_exchange')
     reader=pd.read_csv(full_path,delimiter=';',compression='gzip',
                        parse_dates=['time_exchange','time_coinapi'],index_col='time_exchange',chunksize=10**3)
     df=pd.concat([extract_relevant_fields(x,ex2,ccy1,ccy2) for x in reader],ignore_index=True)
     return(df)
 
-start=timer()
-df=dailyTransactions('20221108','binance','binance1','BINANCE','BTC','USDT')
-print('Bootstrap step 1',timer()-start)
+# def dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2):
+#     full_path=ppm.path_ob.data+ex0+'/'+ex1+'/'+date+'/'+ex2+'_SPOT_'+ccy1+'_'+ccy2+'.csv.gz'
+#     df=pd.read_csv(full_path,delimiter=';',compression='gzip',
+#                parse_dates=['time_exchange','time_coinapi'],index_col='time_exchange')
+#     df['pair']=pd.Series(dict(zip(df.index,[ccy1+'/'+ccy2]*df.index.size)))
+#     df['exchange']=pd.Series(dict(zip(df.index,[ex2]*df.index.size)))
+#     df0=df[['price','base_amount','taker_side','pair','exchange']]
+#     print('--->')
+#     return(df0)
 
-print(df.head(3))
-print(df.tail(3))
-print(df.size)
+print('Bootstrap step 1')
+pairs,usd_pairs,asset_pairs,bearing_assets=ppm.getPairs()
+pjson=ppm.loadJsonUtility('price.json',ppm.path_ob.cache)
+ptbl=ppm.priceTable2Pandas(pjson)
+
+print(type(ptbl))
+dd='20221108'
+print(ptbl[dd])
+
+vol=ppm.loadJsonUtility('vol.json',ppm.path_ob.cache)
+
+#print({dd:pairs[dd]})
+print('Bootstrap step 2')
+vol,update_flag=updateVolumeJson(vol,{'20221108':[('binance', 'binance1', 'BINANCE', 'GRT', 'BTC')]},bearing_assets,ptbl)
+print('5')
 #full_path='/home/eyal/Research/Rutgers/PrincipalPath/Data/CryptoTickData/Trades/trades/binance/binance1/20221108/BINANCE_SPOT_BTC_USDT.csv.gz'
 #df=pd.read_csv(full_path,delimiter=';',compression='infer',parse_dates=['time_exchange','time_coinapi'],index_col='time_exchange')
 
