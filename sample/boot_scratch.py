@@ -99,7 +99,7 @@ def dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2):
     print('1')
     reader=pd.read_csv(full_path,delimiter=';',compression='gzip',
                        parse_dates=['time_exchange','time_coinapi'],index_col='time_exchange',chunksize=10**3)
-    df=pd.concat([extract_relevant_fields(x,ex2,ccy1,ccy2) for x in reader],ignore_index=True)
+    df=pd.concat([extract_relevant_fields(x,ex2,ccy1,ccy2) for x in reader],ignore_index=False)
     return(df)
 
 # def dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2):

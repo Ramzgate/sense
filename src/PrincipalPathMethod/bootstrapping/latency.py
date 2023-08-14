@@ -139,16 +139,16 @@ def genEdgeData(dd,monthlyVolume,pairMap):
             for ex in exchanges:
                 if cc in ll and ex in ll[cc]:
                     nll[tt][cc][ex]=ll[cc][ex][tt]
-
+ 
     print(dd,'Time:',timer(),timer_start,(timer()-timer_start)/60)
     return(nll)
 
 
 def bootstrapLatency():
     #vol=loadJsonUtility('vol.json',path_ob.cache)
+    # '20221102','20221103','20221104','20221105','20221106','20221107',
     pairs,usd_pairs,asset_pairs,bearing_assets=getPairs()
-    for dd in ['20221102','20221103','20221104','20221105','20221106','20221107','20221108',\
-               '20221109','20221110','20221111','20221112','20221113','20221114','20221115',\
+    for dd in ['20221108','20221109','20221110','20221111','20221112','20221113','20221114','20221115',\
                 '20221116','20221117','20221118','20221119','20221120','20221121',\
                 '20221122','20221123','20221124','20221125','20221126','20221127',\
                 '20221128','20221129']:
