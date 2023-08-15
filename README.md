@@ -44,6 +44,7 @@ graph TD
   N --> D["USD"]
   C --> D
   I --> D
+  
 title[<u>Tuesday, November 8, 2022 12:16:00 PM</u><bf>]
 ```
 
