@@ -31,7 +31,7 @@ graph TD
   G --> E["APE/BNB"]
   G --> K["APE/CB"]
   E --> F["BUSD/BNB"]
-  E -> J["USDT/BNB"]
+  E --> J["USDT/BNB"]
   F --> A["ETH/BNB"]
 ```
 
