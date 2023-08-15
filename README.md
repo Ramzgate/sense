@@ -39,7 +39,7 @@ graph LR
   <img src="figuresfigures/APE_1667909760.png" alt="APE_1667909760">
 </figure>
 
-![APE_1667909760](figuresfigures/APE_1667909760.png)
+![APE_1667909760](figures/APE_1667909760.png)
 
 ## The Principal Path Library
 This
