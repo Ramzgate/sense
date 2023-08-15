@@ -37,7 +37,6 @@ graph TD
   C --> D
   E["APE/BNB"] --> F["BUSD/BNB"]
   F --> A
-  G -> E
 ```
 
 ## The Principal Path Library
