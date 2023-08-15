@@ -28,26 +28,25 @@ graph LR
 ```mermaid
 graph TD
   G["APE/wallet"] --> H["APE/FTX"]
-  E["APE/BNB"] --> F["BUSD/BNB"]
-  G -> E
-  H --> I["USD/FTX"]
-  G --> J["APE/CB"]
-  J --> K["USD/CB"]
-  K --> D["USD"]
-  A["ETH/BNB"] --> B["ETH/BTS"]
+  G -> E["APE/BNB"]
+  G --> K["APE/CB"]
+  E --> F["BUSD/BNB"]
+  E -> J["USDT/BNB"]
+  F --> A["ETH/BNB"]
+  J -> A
+  A --> B["ETH/BTS"]
+  A -> L["ETH/FTX"]
   B --> C["USD/BTS"]
-  C --> D
-  F --> A
+  L -> M["USDT/FTX"] 
+  M --> I["USD/FTX"]
+  H --> I
+  I --> D
+  K --> M["USD/CB"]
+  M --> D["USD"]
 ```
 
 ## The Principal Path Library
 This
 <!-- 
-  E -> J["USDT/BNB"]
-  J -> A
-  A -> L["ETH/FTX"]
-  L -> M["USDT/FTX"] 
-  M --> I
-  I --> D
 -> 
 
