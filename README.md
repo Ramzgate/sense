@@ -27,6 +27,7 @@ graph LR
 <!-- APE_1667909760 -->
 ```mermaid
 graph TD
+title<u>Tuesday, November 8, 2022 12:16:00 PM</u>
   G["APE/wallet"] --> H["APE/FTX"]
   G --> E["APE/BNB"]
   G --> K["APE/CB"]
@@ -45,7 +46,7 @@ graph TD
   C --> D
   I --> D
 ```
-Tuesday, November 8, 2022 12:16:00 PM
+
 
 ## The Principal Path Library
 This
