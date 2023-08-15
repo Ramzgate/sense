@@ -42,13 +42,9 @@ graph TD
   J -> A
   A -> K["ETH/FTX"]
   K -> L["USDT/FTX"] 
-  G --> E
-  A --> K
-  K --> L
   L --> I
   I --> D
 ```
-
 
 ## The Principal Path Library
 This
