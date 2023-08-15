@@ -29,7 +29,7 @@ graph LR
 graph TD
   A["ETH/BNB"] --> B["ETH/BTS"]
   B --> C["USD/BTS"]
-  C --> D[USD]
+  C --> D["USD"]
   E["APE/BNB"] --> F["BUSD/BNB"]
   F --> A
   G["APE/wallet"] --> H["APE/FTX"]
