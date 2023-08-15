@@ -24,5 +24,27 @@ graph LR
   I -->|ramp| E
 ```
 
+```mermaid
+graph TD
+        "ETH/BNB" --> "ETH/BTS" [color=black]
+        "ETH/BTS" --> "USD/BTS" [color=black]
+        "USD/BTS" --> USD [color=black]
+        "APE/BNB" --> "BUSD/BNB" [color=black]
+        "BUSD/BNB" --> "ETH/BNB" [color=black]
+        "APE/wallet" --> "APE/FTX" [color=black]
+        "APE/FTX" --> "USD/FTX" [color=black]
+        "APE/wallet" --> "APE/CB" [color=black]
+        "APE/CB" --> "USD/CB" [color=black]
+        "USD/CB" --> USD [color=black]
+        "APE/wallet" --> "APE/BNB" [color=red]
+        "APE/BNB" --> "USDT/BNB" [color=red]
+        "USDT/BNB" --> "ETH/BNB" [color=red]
+        "ETH/BNB" --> "ETH/FTX" [color=red]
+        "ETH/FTX" --> "USDT/FTX" [color=red]
+        "USDT/FTX" --> "USD/FTX" [color=red]
+        "USD/FTX" --> USD [color=red]
+```
+
+
 ## The Principal Path Library
 This
