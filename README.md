@@ -36,10 +36,10 @@ graph LR
   end
 ```
 <figure>
-<img src="/home/eyal/Research/Rutgers/PrincipalPath/Data/cache/graphs/APE_1667909760.png" alt="APE_1667909760">
-<figcaption>
-Fair value pricing for APE coin on Tuesday, November 8, 2022 12:16:00
-</figcaption>
+  <img src="/home/eyal/Research/Rutgers/PrincipalPath/Data/cache/graphs/APE_1667909760.png" alt="APE_1667909760">
+  <figcaption>
+    Fair value pricing for APE coin on Tuesday, November 8, 2022 12:16:00
+  </figcaption>
 </figure>
 
 ## The Principal Path Library
