@@ -36,7 +36,7 @@ graph LR
   end
 ```
 <figure>
-  <img src="figuresfigures/APE_1667909760.png" alt="APE_1667909760">
+  <img src="figures/APE_1667909760.png" alt="APE_1667909760">
 </figure>
 
 ![APE_1667909760](figures/APE_1667909760.png)
