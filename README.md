@@ -26,23 +26,23 @@ graph LR
 
 ```mermaid
 graph TD
-  "ETH/BNB" --> "ETH/BTS"
-  "ETH/BTS" --> "USD/BTS"
-  "USD/BTS" --> USD
-  "APE/BNB" --> "BUSD/BNB"
-  "BUSD/BNB" --> "ETH/BNB"
-  "APE/wallet" --> "APE/FTX"
-  "APE/FTX" --> "USD/FTX"
-  "APE/wallet" --> "APE/CB"
-  "APE/CB" --> "USD/CB"
-  "USD/CB" --> USD
-  "APE/wallet" --> "APE/BNB"
-  "APE/BNB" --> "USDT/BNB"
-  "USDT/BNB" --> "ETH/BNB"
-  "ETH/BNB" --> "ETH/FTX"
-  "ETH/FTX" --> "USDT/FTX"
-  "USDT/FTX" --> "USD/FTX"
-  "USD/FTX" --> USD
+  A["ETH/BNB"] --> B["ETH/BTS"]
+  B --> C["USD/BTS"]
+  C --> D[USD]
+  E["APE/BNB"] --> F["BUSD/BNB"]
+  F --> A
+  G["APE/wallet"] --> H["APE/FTX"]
+  H --> I["USD/FTX"]
+  G --> J["APE/CB"]
+  J --> K["USD/CB"]
+  K --> D
+  G --> E
+  E --> F["USDT/BNB"]
+  F --> A
+  A --> L["ETH/FTX"]
+  L --> M["USDT/FTX"]
+  M --> I
+  I --> D
 ```
 
 
