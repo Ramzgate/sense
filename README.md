@@ -10,6 +10,7 @@ In the universe of digital assets, trading is global and happens across many dif
 
 The __Principal Path Method__ offers an alternative method in which a market is ephemerally designated as principal market and once that market is obtained, source all price information from that market. The identification is a continuous process driven by volumes, market dynamics and freshness of data.
 
+ok  what else
 
 <!-- APE_1667909760 -->
 ```mermaid
