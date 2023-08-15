@@ -34,16 +34,16 @@ graph TD
   E -> J["USDT/BNB"]
   F --> A["ETH/BNB"]
   J -> A
-  A --> B["ETH/BTS"]
-  A -> L["ETH/FTX"]
-  B --> C["USD/BTS"]
-  L -> M["USDT/FTX"] 
-  M --> I["USD/FTX"]
 ```
 
 ## The Principal Path Library
 This
 <!-- 
+  A --> B["ETH/BTS"]
+  A -> L["ETH/FTX"]
+  B --> C["USD/BTS"]
+  L -> M["USDT/FTX"] 
+  M --> I["USD/FTX"]
   H --> I
   K --> N["USD/CB"]
   N --> D["USD"]
