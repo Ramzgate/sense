@@ -32,6 +32,11 @@ graph TD
   G --> J["APE/CB"]
   J --> K["USD/CB"]
   K --> D["USD"]
+  A["ETH/BNB"] --> B["ETH/BTS"]
+  B --> C["USD/BTS"]
+  C --> D
+  E["APE/BNB"] --> F["BUSD/BNB"]
+  F --> A
 ```
 
 ## The Principal Path Library
