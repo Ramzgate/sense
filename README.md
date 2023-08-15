@@ -16,24 +16,24 @@ ok  what else
 ```mermaid
 graph TD
   subgraph Fair value pricing network for APE coin on <br> Tuesday, November 8, 2022 12:16:00
-    G["APE/wallet"] --> H["APE/FTX"]
-    G --> E["APE/BNB"]
-    G --> K["APE/CB"]
-    E --> F["BUSD/BNB"]
-    E --> J["USDT/BNB"]
-    F --> A["ETH/BNB"]
-    J --> A
-    A --> B["ETH/BTS"]
-    A --> L["ETH/FTX"]
-    B --> C["USD/BTS"]
-    L --> M["USDT/FTX"] 
-    M --> I["USD/FTX"]
-    H --> I
-    K --> N["USD/CB"]
-    N --> D["USD"]
-    C --> D
-    I --> D
   end
+  G["APE/wallet"] --> H["APE/FTX"]
+  G --> E["APE/BNB"]
+  G --> K["APE/CB"]
+  E --> F["BUSD/BNB"]
+  E --> J["USDT/BNB"]
+  F --> A["ETH/BNB"]
+  J --> A
+  A --> B["ETH/BTS"]
+  A --> L["ETH/FTX"]
+  B --> C["USD/BTS"]
+  L --> M["USDT/FTX"] 
+  M --> I["USD/FTX"]
+  H --> I
+  K --> N["USD/CB"]
+  N --> D["USD"]
+  C --> D
+  I --> D
 ```
 
 
