@@ -39,7 +39,6 @@ graph TD
   F --> A
   G -> E
   E -> J["USDT/BNB"]
-  J -> A
 ```
 
 ## The Principal Path Library
