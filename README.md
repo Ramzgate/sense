@@ -39,8 +39,7 @@ graph LR
   <img src="figures/APE_1667909760.png" alt="APE_1667909760">
   <figcaption>
     <center>
-      Fair value pricing for APE coin on <br> 
-      Tuesday, November 8, 2022 12:16:00
+      Fair value pricing for APE coin on Tuesday, November 8, 2022 12:16:00
     </center>
   </figcaption>
 </figure>
