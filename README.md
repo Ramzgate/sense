@@ -25,7 +25,7 @@ graph LR
 ```
 
 ```mermaid
-graph TD
+graph LR
   A["ETH/BNB"] --> B["ETH/BTS"]
   B --> C["USD/BTS"]
   C --> D[USD]
