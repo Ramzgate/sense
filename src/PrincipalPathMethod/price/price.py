@@ -55,6 +55,8 @@ def computeDayPrices(m_flow,daily_paths,data,snapshot_times=[],half_life=300,lev
         assert epoch_prices[principal_cost]==price, 'price mismatch with epoch prices'
 
         gap=1e4*(max(epoch_prices.values())-min(epoch_prices.values()))/price
+        #gap=1e4*(price-min(epoch_prices.values()))/price
+        #gap=1e4*(max(epoch_prices.values())-price)/price
 
         if timestamp in snapshot_times:
             snapshots[timestamp]=(epoch_prices,epoch_scores,epoch_paths)

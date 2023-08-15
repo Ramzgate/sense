@@ -1,0 +1,20 @@
+digraph "/home/eyal/Research/Rutgers/PrincipalPath/Data/cache//graphs1667445660" {
+	USD
+	"APE/wallet" -> "APE/CB" [color=black]
+	"APE/CB" -> "USD/CB" [color=black]
+	"USD/CB" -> USD [color=black]
+	"APE/wallet" -> "APE/BNB" [color=red]
+	"APE/BNB" -> "USDT/BNB" [color=red]
+	"USDT/BNB" -> "ETH/BNB" [color=red]
+	"ETH/BNB" -> "ETH/FTXUS" [color=red]
+	"ETH/FTXUS" -> "USD/FTXUS" [color=red]
+	"USD/FTXUS" -> USD [color=red]
+	"ETH/BNB" -> "ETH/BTS" [color=black]
+	"ETH/BTS" -> "USD/BTS" [color=black]
+	"USD/BTS" -> USD [color=black]
+	"APE/BNB" -> "BTC/BNB" [color=black]
+	"BTC/BNB" -> "BUSD/BNB" [color=black]
+	"BUSD/BNB" -> "ETH/BNB" [color=black]
+	"ETH/BNB" -> "ETH/CB" [color=black]
+	"ETH/CB" -> "USD/CB" [color=black]
+}

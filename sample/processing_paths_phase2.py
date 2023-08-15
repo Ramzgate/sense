@@ -21,5 +21,5 @@ if 1==1:
         date=current_date+delta*ii
         print(date)
         data=ppm.readDailyData(date)
-        daily_paths=ppm.computePaths('GRT',data)
+        daily_paths=ppm.computePaths('ETH',data) # APE MANA FTT GRT AAVE FIL 
         ppm.addPaths(date,daily_paths)  
