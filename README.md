@@ -37,6 +37,7 @@ graph TD
   G --> J["APE/CB"]
   J --> K["USD/CB"]
   K --> D
+  G -> E
 ```
 
 ## The Principal Path Library
