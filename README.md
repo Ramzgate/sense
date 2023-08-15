@@ -42,6 +42,7 @@ graph TD
   H --> I
   K --> N["USD/CB"]
   N --> D["USD"]
+  C --> D
   I --> D
 ```
 
