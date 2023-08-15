@@ -24,8 +24,9 @@ graph LR
   I -->|ramp| E
 ```
 
+<!-- APE_1667909760 -->
 ```mermaid
-graph LR
+graph TD
   A["ETH/BNB"] --> B["ETH/BTS"]
   B --> C["USD/BTS"]
   C --> D[USD]
