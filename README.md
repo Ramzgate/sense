@@ -29,6 +29,7 @@ graph LR
 graph TD
   G["APE/wallet"] --> H["APE/FTX"]
   E["APE/BNB"] --> F["BUSD/BNB"]
+  G -> E
   H --> I["USD/FTX"]
   G --> J["APE/CB"]
   J --> K["USD/CB"]
@@ -42,7 +43,6 @@ graph TD
 ## The Principal Path Library
 This
 <!-- 
-  G -> E
   E -> J["USDT/BNB"]
   J -> A
   A -> L["ETH/FTX"]
