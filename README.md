@@ -15,7 +15,7 @@ ok  what else
 <!-- APE_1667909760 -->
 ```mermaid
 graph TD
-  subgraph Fair value pricing network for APE coin on Tuesday, November 8, 2022 12:16:00
+  subgraph Fair value pricing network for APE coin on <br> Tuesday, November 8, 2022 12:16:00
     G["APE/wallet"] --> H["APE/FTX"]
     G --> E["APE/BNB"]
     G --> K["APE/CB"]
