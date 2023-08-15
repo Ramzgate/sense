@@ -37,9 +37,14 @@ graph TD
   G --> J["APE/CB"]
   J --> K["USD/CB"]
   K --> D
+  G -> E
+  E -> J["USDT/BNB"]
+  J -> A
+  A -> K["ETH/FTX"]
+  K -> L["USDT/FTX"] 
   G --> E
-  A --> L["ETH/FTX"]
-  L --> M["USDT/FTX"]
+  A --> K
+  K --> M["USDT/FTX"]
   M --> I
   I --> D
 ```
