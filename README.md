@@ -12,29 +12,9 @@ The __Principal Path Method__ offers an alternative method in which a market is 
 
 ok  what else
 
-<!-- APE_1667909760 -->
-```mermaid
-graph LR
-  G["APE/wallet"] --> H["APE/FTX"]
-  G --> E["APE/BNB"]
-  G --> K["APE/CB"]
-  E --> F["BUSD/BNB"]
-  E --> J["USDT/BNB"]
-  F --> A["ETH/BNB"]
-  J --> A
-  A --> B["ETH/BTS"]
-  A --> L["ETH/FTX"]
-  B --> C["USD/BTS"]
-  L --> M["USDT/FTX"] 
-  M --> I["USD/FTX"]
-  H --> I
-  K --> N["USD/CB"]
-  N --> D["USD"]
-  C --> D
-  I --> D
-  subgraph Fair value pricing for APE coin on <br> Tuesday, November 8, 2022 12:16:00
-  end
-```
+<!-- 
+-->
+
 <figure>
   <img src="figures/APE_1667909760.png" alt="APE_1667909760">
   <figcaption>
