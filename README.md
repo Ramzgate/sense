@@ -26,23 +26,23 @@ graph LR
 
 ```mermaid
 graph TD
-  "ETH/BNB" --> "ETH/BTS" [color=black]
-  "ETH/BTS" --> "USD/BTS" [color=black]
-  "USD/BTS" --> USD [color=black]
-  "APE/BNB" --> "BUSD/BNB" [color=black]
-  "BUSD/BNB" --> "ETH/BNB" [color=black]
-  "APE/wallet" --> "APE/FTX" [color=black]
-  "APE/FTX" --> "USD/FTX" [color=black]
-  "APE/wallet" --> "APE/CB" [color=black]
-  "APE/CB" --> "USD/CB" [color=black]
-  "USD/CB" --> USD [color=black]
-  "APE/wallet" --> "APE/BNB" [color=red]
-  "APE/BNB" --> "USDT/BNB" [color=red]
-  "USDT/BNB" --> "ETH/BNB" [color=red]
-  "ETH/BNB" --> "ETH/FTX" [color=red]
-  "ETH/FTX" --> "USDT/FTX" [color=red]
-  "USDT/FTX" --> "USD/FTX" [color=red]
-  "USD/FTX" --> USD [color=red]
+  "ETH/BNB" --> "ETH/BTS"
+  "ETH/BTS" --> "USD/BTS"
+  "USD/BTS" --> USD
+  "APE/BNB" --> "BUSD/BNB"
+  "BUSD/BNB" --> "ETH/BNB"
+  "APE/wallet" --> "APE/FTX"
+  "APE/FTX" --> "USD/FTX"
+  "APE/wallet" --> "APE/CB"
+  "APE/CB" --> "USD/CB"
+  "USD/CB" --> USD
+  "APE/wallet" --> "APE/BNB"
+  "APE/BNB" --> "USDT/BNB"
+  "USDT/BNB" --> "ETH/BNB"
+  "ETH/BNB" --> "ETH/FTX"
+  "ETH/FTX" --> "USDT/FTX"
+  "USDT/FTX" --> "USD/FTX"
+  "USD/FTX" --> USD
 ```
 
 
