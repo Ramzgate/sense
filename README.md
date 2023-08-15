@@ -40,7 +40,6 @@ graph TD
   G -> E
   E -> J["USDT/BNB"]
   J -> A
-  A -> L["ETH/FTX"]
 ```
 
 ## The Principal Path Library
