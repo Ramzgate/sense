@@ -36,8 +36,10 @@ graph LR
   end
 ```
 <figure>
-  <img src="/home/eyal/Research/Rutgers/PrincipalPath/Data/cache/graphs/APE_1667909760.png" alt="APE_1667909760">
+  <img src="figuresfigures/APE_1667909760.png" alt="APE_1667909760">
 </figure>
+
+![APE_1667909760](figuresfigures/APE_1667909760.png)
 
 ## The Principal Path Library
 This
