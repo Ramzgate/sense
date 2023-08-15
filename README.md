@@ -14,7 +14,7 @@ ok  what else
 
 <!-- APE_1667909760 -->
 ```mermaid
-graph TD
+graph LR
   G["APE/wallet"] --> H["APE/FTX"]
   G --> E["APE/BNB"]
   G --> K["APE/CB"]
