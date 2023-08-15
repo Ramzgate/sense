@@ -44,8 +44,8 @@ graph TD
   K -> L["USDT/FTX"] 
   G --> E
   A --> K
-  K --> M["USDT/FTX"]
-  M --> I
+  K --> L
+  L --> I
   I --> D
 ```
 
