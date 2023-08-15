@@ -32,7 +32,7 @@ graph LR
   N --> D["USD"]
   C --> D
   I --> D
-  subgraph Fair value pricing network for APE coin on <br> Tuesday, November 8, 2022 12:16:00
+  subgraph Fair value pricing for APE coin on <br> Tuesday, November 8, 2022 12:16:00
   end
 ```
 
