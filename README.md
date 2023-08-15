@@ -28,7 +28,7 @@ graph LR
 ```mermaid
 graph TD
   G["APE/wallet"] --> H["APE/FTX"]
-  G -> E["APE/BNB"]
+  G --> E["APE/BNB"]
   G --> K["APE/CB"]
   E --> F["BUSD/BNB"]
   E -> J["USDT/BNB"]
