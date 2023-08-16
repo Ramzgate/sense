@@ -15,10 +15,6 @@ The __Principal Path Method__ (PPM) offers an alternative method for pricing ass
 It is well understood that if an asset does not trade directly against a USD or trades in very low volumes then it can be converted to USD indirectly through sequence of conversions going through multiple assets before reaching USD. It is also clear that there are many different sequences of assets that may be used, and the choice of the path impacts the price attained. The objective of PPM is to provide a methodology through which a path for pricing an asset is selected just as accounting guidelines provide a method trough which principal markets are chosen and used to price particular assets. However, due to the volatile nature of the the speed at which exchanges can raise to prominence on the one hand, and the rapid collapse on the other, it is important that the designation of principal path be dynamic and ephemeral and respond to changing market conditions. The objective is to provide a price that meets the basic requirements of fair value of _availability_ , _reliability_ and _relevance_. 
 
 Specifically, given a set of assets BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  We say that a pair of assets is exchangeable if the pair of assets are traded over a compliant public market and an exchange rate can be established. Thus, the pair (USDT,ETH) is traded on multiple exchanges, while currently the pair (DOGE,APE) is not exchangeable over any compliant exchange and the pair is therefore not exchangeable. The set of assets and set of exchangeable pairs form the _excitability graph_ of two assets or an asset and a fiat currency. A _pricing path_ or simple _path_ is a path on the expandability graph connecting the two assets. We note that each path may traverses multiple exchanges and blockchains, may entail fees, gas costs and latency, not to mention operational and market risk. It is important to account for these differences when trading off the different paths to uphold availability reliability and relevance.  
-
-The PPM method attributes a score to each path based on the basic characteristics of the 
-
-
 <!-- 
 -->
 
@@ -26,10 +22,12 @@ The PPM method attributes a score to each path based on the basic characteristic
   <img src="figures/APE_1667909760.png" alt="APE_1667909760">
   <figcaption>
     <center>
-      Figure 1: Fair value pricing for APE coin on Tuesday, November 8, 2022 12:16:00
+      Figure 1: The APE - USD expandability graph on Tuesday, November 8, 2022 12:16:00
     </center>
   </figcaption>
 </figure>
+
+The PPM method attributes a score to each path based on the basic characteristics of the 
 
 <!-- [APE_1667909760](figures/APE_1667909760.png) -->
 
