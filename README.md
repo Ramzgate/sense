@@ -8,7 +8,7 @@ Fair value pricing is a crucial aspect of the mark-to-market accounting method, 
 
 In the universe of digital assets, trading is global and happens across many different venues without a specific venue dominating any of the others. Moreover, most transactions are swaps of digital assets against other digital assets, this is true even if one of these assets is a stablecoin. Even for assets that trade against fiat currencies it is often the case that a small fraction of the volume is converted to fiat (on/off ramping) while the real drivers are crypto to crypto swaps. With such fragmented markets, it becomes impossible to apply existing standards to reflect market realities.
 
-## The Principal Path Library
+## The Principal Path Method
 
 The __Principal Path Method__ (PPM) offers an alternative method for pricing assets in a cosistent and coherent manner that accounts for the unique structure of the market and in particular the diversity of assets that are used in it. 
 
