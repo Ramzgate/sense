@@ -23,10 +23,12 @@ To illustrate, given assets like BTC, ETH, USDT, USDC, MANA, GLT, APE, etc., we 
 </figure>
 
  <bf><bf>
-PPM assigns a score to each path based on asset characteristics, exchange compliance, volumes, data freshness, transitions, and more. The path with the highest score becomes the ephemeral _principal path_ used for pricing the asset.
+
+The PPM assesses each path's quality by considering asset traits, exchange adherence, trading volumes, data recency, transitions, and other factors. These path scores are derived from corresponding scores linked to exchanges or blockchains. These scores are categorized into compliance, volume, decay, and latency. A path's compliance, volume, and decay scores are determined by their respective minimum scores along the path, while latency accumulates across the path. The principal path, having the highest score, is selected for pricing the asset in an ephemeral manner.
 
 <!-- [APE_1667909760](figures/APE_1667909760.png) -->
 
 ## The Principal Path Library
-This library 
+The library is an implementation of the PPM method in python, designed to compute historical PPM fair value prices from historical data. The different components of the score have very differnt time scales during which changes and updates take place. The compliance score is assessed quarterly, volume and latency on a monthly bases and decay either tick by tick or in short intervals. 
 
+As such the libraries are designed to use pre-computation and cache intermediate computations as much as possible. 
