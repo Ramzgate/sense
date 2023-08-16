@@ -12,7 +12,7 @@ In the universe of digital assets, trading is global and happens across many dif
 
 The __Principal Path Method__ offers an alternative method in which a market is ephemerally designated as principal market and once that market is obtained, source all price information from that market. The identification is a continuous process driven by volumes, market dynamics and freshness of data.
 
-Let $A={a0,\ldots, ak}$ the set of all assets, e.g. BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  We say that a pair of assets (ai,aj) is exchangeable if the asset ai can be exchanged/swapped for asset aj and an exchange rate can be established through the BBHS21 methodology. Thus, (USDT,ETH) is traded on multiple exchanges, a BBHS21 fair value can be established, and therefore the pair is exchangeable. On the other hand, the pair (DOGE,APE) is not exchangeable on any compliant exchange as of time of writing, and the pair is therefore not exchangeable. 
+Let $A={a_0,\ldots, a_k}$ the set of all assets, e.g. BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  We say that a pair of assets (ai,aj) is exchangeable if the asset ai can be exchanged/swapped for asset aj and an exchange rate can be established through the BBHS21 methodology. Thus, (USDT,ETH) is traded on multiple exchanges, a BBHS21 fair value can be established, and therefore the pair is exchangeable. On the other hand, the pair (DOGE,APE) is not exchangeable on any compliant exchange as of time of writing, and the pair is therefore not exchangeable. 
 
 
 <!-- 
