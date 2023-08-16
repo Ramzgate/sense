@@ -24,6 +24,7 @@ Specifically, given a set of assets BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  W
     <small><em><strong>Figure 1</strong>: The APE - USD expandability graph on Tuesday, November 8, 2022 12:16:00</em></small>
   </figcaption>
 </figure>
+\\
 
 The PPM method attributes a score to each path based on the basic characteristics of the 
 
