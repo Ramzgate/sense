@@ -10,7 +10,10 @@ In the universe of digital assets, trading is global and happens across many dif
 
 ## The Principal Path Library
 
-The __Principal Path Method__ offers an alternative method in which a market is ephemerally designated as principal market and once that market is obtained, source all price information from that market. The identification is a continuous process driven by volumes, market dynamics and freshness of data.
+The __Principal Path Method__ (PPM) offers an alternative method for pricing assets in a cosistent and coherent manner that accounts for the unique structure of the market and in particular the diversity of assets that are used in it. 
+
+It is well understood that if an asset does not trade directly against a USD or trades in very low volumes then it can be converted to USD indirectly through sequence of conversions going through multiple assets before reaching USD. It is also clear that there are many different sequences of assets that may be used, and the choice of the path impacts the price attained. The objective of PPM is to provide a methodology through which a path for pricing an asset is selected just as accounting guidelines provide a method trough which principal markets are chosen and used to price particular assets. However, due to the volatile nature of the the speed at which exchanges can raise to prominence on the one hand, and the rapid collapse on the other, it is important that the designation of principal path be dynamic and ephemeral and respond to changing market conditions. 
+
 
 Let $A={a_0,\ldots, a_k}$ the set of all assets, e.g. BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  We say that a pair of assets (ai,aj) is exchangeable if the asset ai can be exchanged/swapped for asset aj and an exchange rate can be established through the BBHS21 methodology. Thus, (USDT,ETH) is traded on multiple exchanges, a BBHS21 fair value can be established, and therefore the pair is exchangeable. On the other hand, the pair (DOGE,APE) is not exchangeable on any compliant exchange as of time of writing, and the pair is therefore not exchangeable. 
 
