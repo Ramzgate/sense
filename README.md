@@ -25,7 +25,7 @@ Specifically, given a set of assets BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  W
   </figcaption>
 </figure>
 
-\ <bf>
+<bf>
 
 The PPM method attributes a score to each path based on the basic characteristics of the assets, and exchanges along the path, accounting for compliance of the exchange, volumes, freshens of data, transitions between exchanges and blockchains etc. The path with the maximal score is chosen ephemerally to be the _principal path_ and used for pricing the asset. 
 
