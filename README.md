@@ -28,7 +28,7 @@ The PPM assesses each path's quality by considering asset traits, exchange adher
 
 <!-- [APE_1667909760](figures/APE_1667909760.png) -->
 
-## The Principal Path Library
+### The Principal Path Library
 The library is an implementation of the PPM method in python, designed to compute historical PPM fair value prices from historical data. The different components of the score have very differnt time scales during which changes and updates take place. The compliance score is assessed quarterly, volume and latency on a monthly bases and decay either tick by tick or in short intervals. 
 
 As such the libraries are designed to use pre-computation and cache intermediate computations as much as possible. 
