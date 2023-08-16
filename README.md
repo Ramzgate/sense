@@ -14,10 +14,8 @@ The __Principal Path Method__ (PPM) offers an alternative method for pricing ass
 
 It is well understood that if an asset does not trade directly against a USD or trades in very low volumes then it can be converted to USD indirectly through sequence of conversions going through multiple assets before reaching USD. It is also clear that there are many different sequences of assets that may be used, and the choice of the path impacts the price attained. The objective of PPM is to provide a methodology through which a path for pricing an asset is selected just as accounting guidelines provide a method trough which principal markets are chosen and used to price particular assets. However, due to the volatile nature of the the speed at which exchanges can raise to prominence on the one hand, and the rapid collapse on the other, it is important that the designation of principal path be dynamic and ephemeral and respond to changing market conditions. The objective is to provide a price that meets the basic requirements of fair value of _availability_ , _reliability_ and _relevance_. 
 
-Specifically, given a set of assets BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  We say that a pair of assets is exchangeable if the pair of assets are traded over a compliant public market and an exchange rate can be established. Thus, the pair (USDT,ETH) is traded on multiple exchanges, while currently the pair (DOGE,APE) is not exchangeable over any compliant exchange and the pair is therefore not exchangeable. The set of assets and set of exchangeable pairs form the _excitability graph_ of two assets or an asset and a fiat currency. A _pricing path_ or simple _path_ is a path on the expandability graph connecting the two assets. We note that each path may traverses multiple exchanges and blockchains, may entail fees, gas costs and latency, not to mention operational and market risk. It is important to account for these differences when trading off the different paths to uphold availability reliability and relevance.  
-<!-- 
--->
 
+To illustrate, given assets like BTC, ETH, USDT, USDC, MANA, GLT, APE, etc., we define exchangeable pairs as those traded on compliant public markets with established exchange rates. A pair like (USDT, ETH) is exchangeable across multiple exchanges, while (DOGE, APE) is not. These assets and pairs form the exchangeability graph. A pricing path connects two assets, possibly across multiple exchanges and blockchains, considering fees, risks, and other factors. 
 <figure>
   <img src="figures/APE_1667909760.png" alt="APE_1667909760">
   <figcaption>
@@ -26,11 +24,10 @@ Specifically, given a set of assets BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  W
 </figure>
 
  <bf><bf>
-
-The PPM method attributes a score to each path based on the basic characteristics of the assets, and exchanges along the path, accounting for compliance of the exchange, volumes, freshens of data, transitions between exchanges and blockchains etc. The path with the maximal score is chosen ephemerally to be the _principal path_ and used for pricing the asset. 
+PPM assigns a score to each path based on asset characteristics, exchange compliance, volumes, data freshness, transitions, and more. The path with the highest score becomes the ephemeral _principal path_ used for pricing the asset.
 
 <!-- [APE_1667909760](figures/APE_1667909760.png) -->
 
 ## The Principal Path Library
-This
+This library 
 
