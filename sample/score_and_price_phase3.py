@@ -92,6 +92,7 @@ if 1==2:
 
 def generateGraph(file_name,paths,max_tuples):
     G=Digraph(file_name)
+    G.attr(rankdir='LR')
     G.node("USD")
     E=[]
     for kk in paths:
@@ -121,10 +122,11 @@ def generateGraph(file_name,paths,max_tuples):
     G.render(file_name,format='png',directory=ppm.path_ob.cache+'/graphs')
     return
 
-asset='APE'
-df,snapshots=snapShots(asset,datetime.date(2022,11,8),\
-                       ['1667909760','1667913300','1667933640','1667942100',\
-                        '1667948040','1667950320','1667953560','1667969400'])
+asset='FTT'
+df,snapshots=snapShots(asset,datetime.date(2022,11,12),\
+                       ['1668261720','1668286740','1668306780'])
+#                       ['1667909760','1667913300','1667933640','1667942100',\
+#                        '1667948040','1667950320','1667953560','1667969400'])
 timestamps=[int(time.mktime(tt.timetuple())) for tt in list(df.index)]
 price=dict(zip(timestamps,list(df['price'])))
 print(json.dumps(price,indent=2))
