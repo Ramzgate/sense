@@ -47,15 +47,18 @@ def snapShots(asset,date,snapshot_times,half_life=240,level_bump=120):
 #ss.sort_values(['vol'])
 #print(df.keys())
 
+
 if 1==2:
     df_APE=periodicData('APE',datetime.date(2022,11,2),datetime.date(2022,11,20))
     df_APE[['price']].plot(subplots=True, sharey=False ,figsize=(10,4))
     df_APE[['gap']].plot(subplots=True, sharey=False ,figsize=(10,4))
 
+if 1==2:
     df_FTT=periodicData('FTT',datetime.date(2022,11,2),datetime.date(2022,11,20))
     df_FTT[['price']].plot(subplots=True, sharey=False ,figsize=(10,4))
     df_FTT[['gap']].plot(subplots=True, sharey=False ,figsize=(10,4))
 
+if 1==2:
     df_ETH=periodicData('ETH',datetime.date(2022,11,2),datetime.date(2022,11,20))
     df_ETH[['price']].plot(subplots=True, sharey=False ,figsize=(10,4))
     plt.show()
@@ -122,8 +125,8 @@ def generateGraph(file_name,paths,max_tuples):
     G.render(file_name,format='png',directory=ppm.path_ob.cache+'/graphs')
     return
 
-asset='MANA'
-df,snapshots=snapShots(asset,datetime.date(2022,11,7),\
+asset='FTT'
+df,snapshots=snapShots(asset,datetime.date(2022,11,8),\
                        ['1667837940'],300,120)
 #                       ['1667909760','1667913300','1667933640','1667942100',\
 #                        '1667953440','1667953500','1667953560','1667953620'])
@@ -139,5 +142,10 @@ for timestamp in snapshots['snapshots']:
     file_name=asset+'_'+timestamp
     generateGraph(file_name,mypaths,max_tuples)
 
-ppm.showSnapshots(snapshots)
+#ppm.showSnapshots(snapshots)
+
+df_FTT=periodicData('FTT',datetime.date(2022,11,2),datetime.date(2022,11,20))
+df_FTT[['price']].plot(subplots=True, sharey=False ,figsize=(10,4))
+df_FTT[['gap']].plot(subplots=True, sharey=False ,figsize=(10,4))
+plt.show()
 
