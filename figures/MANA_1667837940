@@ -1,0 +1,19 @@
+digraph MANA_1667837940 {
+	rankdir=LR
+	USD
+	"MANA/BNB" -> "BTC/BNB" [color=black]
+	"BTC/BNB" -> "ETH/BNB" [color=black]
+	"MANA/wallet" -> "MANA/BNB" [color=red]
+	"MANA/BNB" -> "USDT/BNB" [color=red]
+	"USDT/BNB" -> "ETH/BNB" [color=red]
+	"ETH/BNB" -> "ETH/CB" [color=red]
+	"ETH/CB" -> "USD/CB" [color=red]
+	"USD/CB" -> USD [color=red]
+	"MANA/wallet" -> "MANA/CB" [color=black]
+	"MANA/CB" -> "USD/CB" [color=black]
+	"ETH/BNB" -> "ETH/BTS" [color=black]
+	"ETH/BTS" -> "USD/BTS" [color=black]
+	"USD/BTS" -> USD [color=black]
+	"MANA/CB" -> "BTC/CB" [color=black]
+	"BTC/CB" -> "USD/CB" [color=black]
+}

@@ -122,12 +122,13 @@ def generateGraph(file_name,paths,max_tuples):
     G.render(file_name,format='png',directory=ppm.path_ob.cache+'/graphs')
     return
 
-asset='FTT'
-df,snapshots=snapShots(asset,datetime.date(2022,11,8),\
-#                       ['1668261720','1668286740','1668306780'])
-                       ['1667909760','1667913300','1667933640','1667942100',\
-                        '1667953440','1667953500','1667953560','1667953620'])
-timestamps=[int(time.mktime(tt.timetuple())) for tt in list(df.index)]
+asset='MANA'
+df,snapshots=snapShots(asset,datetime.date(2022,11,7),\
+                       ['1667837940'],300,120)
+#                       ['1667909760','1667913300','1667933640','1667942100',\
+#                        '1667953440','1667953500','1667953560','1667953620'])
+#timestamps=[int(time.mktime(tt.timetuple())) for tt in list(df.index)]
+timestamps=[tt.__str__()+'-'+str(int(time.mktime(tt.timetuple()))) for tt in list(df.index)]
 price=dict(zip(timestamps,list(df['price'])))
 print(json.dumps(price,indent=2))
 
@@ -138,4 +139,5 @@ for timestamp in snapshots['snapshots']:
     file_name=asset+'_'+timestamp
     generateGraph(file_name,mypaths,max_tuples)
 
+ppm.showSnapshots(snapshots)
 
