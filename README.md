@@ -21,7 +21,7 @@ Specifically, given a set of assets BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  W
 <figure>
   <img src="figures/APE_1667909760.png" alt="APE_1667909760">
   <figcaption>
-    <center><small><em><strong>Figure 1</strong>: The APE - USD expandability graph on Tuesday, November 8, 2022 12:16:00</em></small></center>
+    <small><em><strong>Figure 1</strong>: The APE - USD expandability graph on Tuesday, November 8, 2022 12:16:00</em></small>
   </figcaption>
 </figure>
 
