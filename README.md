@@ -24,9 +24,10 @@ Specifically, given a set of assets BTC, ETH, USDT, USDC, MANA, GLT, APE etc.  W
     <small><em><strong>Figure 1</strong>: The APE - USD expandability graph on Tuesday, November 8, 2022 12:16:00</em></small>
   </figcaption>
 </figure>
-<bf>
 
-The PPM method attributes a score to each path based on the basic characteristics of the 
+\ <bf>
+
+The PPM method attributes a score to each path based on the basic characteristics of the assets, and exchanges along the path, accounting for compliance of the exchange, volumes, freshens of data, transitions between exchanges and blockchains etc. The path with the maximal score is chosen ephemerally to be the _principal path_ and used for pricing the asset. 
 
 <!-- [APE_1667909760](figures/APE_1667909760.png) -->
 
