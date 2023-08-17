@@ -31,4 +31,6 @@ The PPM assesses each path's quality by considering asset traits, exchange adher
 ### The Principal Path Library
 The library is an implementation of the PPM method in python, designed to compute historical PPM fair value prices from historical data. The different components of the score have very different time scales during which changes and updates take place. The compliance score is assessed quarterly, volume and latency on a monthly bases and decay either tick by tick or in short intervals. As such the libraries are designed to use pre-computation and cache intermediate computations as much as possible. Historical data used in the demo and stress test covers ten assets and four exchanges adding up to 30G of compressed tick data covering the period from November 2nd to November 30th 2022. In addition another 5G of disk space are required to store cache data.
 
-[Installing and running](https://github.com/Ramzgate/sense/tree/main/src/PrincipalPathMethod)
+[Installing and running][PPM]
+
+[PPM]: https://github.com/Ramzgate/sense/tree/main/src/PrincipalPathMethod
