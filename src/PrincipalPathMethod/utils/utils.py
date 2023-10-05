@@ -7,7 +7,6 @@ import json
 from ..classes import Path
 from ..classes import *
 
-
 path_ob=Path()
 path_ob.Init()
 
