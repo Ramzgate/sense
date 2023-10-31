@@ -139,11 +139,11 @@ def findDominantExchanges():
 
     # create a table that would map for each bearing asset on a given day to path to data file used to  
     # generate a succint price history for the asset
-    dates=[strDate(dd) for (dd,ccy) in list(vv.index)]
+    dates=[datetime2str(dd) for (dd,ccy) in list(vv.index)]
     assets=[ccy for (dd,ccy) in list(vv.index)]
     vtbl=dict(zip(dates,[dict() for dd in dates]))
     for (dd,ccy) in list(vv.index):
-        vtbl[strDate(dd)][ccy]=[(ex0,ex1,ex2,ccy1,ccy2) for (ex0,ex1,ex2,ccy1,ccy2) in usd_pairs[strDate(dd)]\
+        vtbl[datetime2str(dd)][ccy]=[(ex0,ex1,ex2,ccy1,ccy2) for (ex0,ex1,ex2,ccy1,ccy2) in usd_pairs[datetime2str(dd)]\
                         if (ex2,ccy1,ccy2)==(vv['exchange'][(dd,ccy)],ccy,vv['ccy2'][(dd,ccy)])][0]
     return(vtbl)
 
@@ -162,7 +162,7 @@ def getIntervalPrice(ddate,cc,dts):
     # Get asset latest price for fixed intervals, default 10sec
     #print('--->',ddate,type(ddate))
     (ex0,ex1,ex2,ccy1,ccy2)=cc
-    df=dailyTransactions(strDate(ddate),ex0,ex1,ex2,ccy1,ccy2)
+    df=dailyTransactions(datetime2str(ddate),ex0,ex1,ex2,ccy1,ccy2)
     pusd=pd.merge_asof(
         dts.sort_index(),
         df[['price']].sort_index(),

@@ -72,7 +72,7 @@ def extract_relevant_fields(df,ex2,ccy1,ccy2):
     return(df0)
 
 def dailyTransactions(date,ex0,ex1,ex2,ccy1,ccy2):
-    print('-->')
+    #print('-->')
     full_path=path_ob.data+ex0+'/'+ex1+'/'+date+'/'+ex2+'_SPOT_'+ccy1+'_'+ccy2+'.csv.gz'
     reader=pd.read_csv(full_path,delimiter=';',compression='gzip',
                        parse_dates=['time_exchange','time_coinapi'],index_col='time_exchange',chunksize=10**3)

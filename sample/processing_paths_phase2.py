@@ -9,8 +9,6 @@ import networkx as nx
 import copy
 import json
 
-sys.path.append('/home/eyal/Research/Rutgers/PrincipalPath/sense/src')
-#sys.path.append('/Users/eyal42/Work/Full Time/Libra/Libra Research/Post Lukka Research/Rutgers/Fair Value/Sensitivity Analysis/sense/src')
 import PrincipalPathMethod as ppm
 
 duration=28

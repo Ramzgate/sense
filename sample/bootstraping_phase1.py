@@ -10,10 +10,10 @@ from timeit import default_timer as timer
 import PrincipalPathMethod as ppm
 
 ## <--  Required for full functionality --> 
-ppm.bootstrapVolume()
+#ppm.bootstrapVolume()
 
 ## <--  Required for full functionality --> 
-#ppm.bootstrapLatency()
+ppm.bootstrapLatency()
 
 #snapshot_times=[]#['1667361720','1667361840']
 #df,snapshots=ppm.priceEngine('FTT',datetime.date(2022,11,4),snapshot_times,240,120)
